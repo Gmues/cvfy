@@ -255,6 +255,18 @@ function getCurrentColor(colorValue: string): {
               <div class="form__group col-span-full">
                 <label
                   class="form__label"
+                  for="birth-date"
+                >🎂 {{ $t("birth-date") }}</label>
+                <input
+                  id="birth-date"
+                  v-model="formSettings.birthDate"
+                  class="form__control"
+                  type="date"
+                >
+              </div>
+              <div class="form__group col-span-full">
+                <label
+                  class="form__label"
                   for="email"
                 >✉️ {{ $t("email") }}</label>
                 <input

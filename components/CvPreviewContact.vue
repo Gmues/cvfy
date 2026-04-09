@@ -9,6 +9,18 @@ const emailHref = computed(() => {
 const phoneNumberHref = computed(() => {
   return `tel:${formSettings.value.phoneNumber}`
 })
+
+const formattedBirthDate = computed(() => {
+  if (!formSettings.value.birthDate) return ''
+  
+  const date = new Date(formSettings.value.birthDate)
+  const day = date.getDate()
+  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+  const month = monthNames[date.getMonth()]
+  const year = date.getFullYear()
+  
+  return `${day}. ${month} ${year}`
+})
 </script>
 
 <template>
@@ -60,6 +72,30 @@ const phoneNumberHref = computed(() => {
           <use href="@/assets/sprite.svg#location" />
         </svg>
         <span tabindex="0">{{ formSettings.location }}</span>
+      </div>
+      <div
+        v-if="formSettings.birthDate"
+        class="cv__icon-wrapper"
+      >
+        <svg class="cv__icon">
+          <use href="@/assets/sprite.svg#calendar" />
+        </svg>
+        <span tabindex="0">{{ formattedBirthDate }}</span>
+      </div>
+      <div
+        v-if="formSettings.website"
+        class="cv__icon-wrapper"
+      >
+        <svg class="cv__icon">
+          <use href="@/assets/sprite.svg#website" />
+        </svg>
+        <a
+          target="_blank"
+          rel="noopener"
+          :href="formSettings.website.includes('https') ? formSettings.website : `https://${formSettings.website}`"
+        >{{
+          formSettings.website
+        }}</a>
       </div>
     </div>
   </section>

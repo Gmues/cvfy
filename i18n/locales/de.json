@@ -42,6 +42,7 @@
   "job-title": "Berufsbezeichnung / Aktuelle Position",
   "first-name": "Vorname",
   "last-name": "Nachname",
+  "birth-date": "Geburtsdatum",
   "email": "Email",
   "location": "Ort",
   "phone-number": "Telefon",

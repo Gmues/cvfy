@@ -42,6 +42,7 @@
   "job-title": "Functietitel / Huidige functie",
   "first-name": "Voornaam",
   "last-name": "Achternaam",
+  "birth-date": "Geboortedatum",
   "email": "E-mail",
   "location": "Locatie",
   "phone-number": "Telefoonnummer",

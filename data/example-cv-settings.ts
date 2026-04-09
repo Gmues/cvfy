@@ -6,6 +6,7 @@ export const cvSettingTemplate: Cv = {
   jobTitle: 'Deputy Director of Parks and Recreations',
   name: 'Leslie',
   lastName: 'Knope',
+  birthDate: '1975-01-18',
   email: 'lknope@parksdept.com',
   location: 'Pawnee, Indiana',
   phoneNumber: '317-660-2160',
@@ -27,6 +28,7 @@ export const cvSettingTemplate: Cv = {
       from: new Date(1993, 9, 1),
       to: new Date(1993, 4, 1),
       current: false,
+      displayDate: false,
       summary:
         '<ul><li><p>Sed ut lorem viverra urna malesuada interdum in ut risus.</p></li><li><p>Duis at sem non justo aliquam iaculis.</p></li><li><p>Quisque lobortis nibh non turpis interdum ornare.</p></li><li><p>Sed et diam nec arcu tempor suscipit sit amet at tellus.</p></li><li><p>Duis quis diam imperdiet, pharetra lacus eget, fringilla odio.</p></li></ul>',
     },
@@ -39,6 +41,7 @@ export const cvSettingTemplate: Cv = {
       from: new Date(2009, 1, 1),
       to: new Date(2012, 1, 1),
       current: true,
+      displayDate: true,
       summary:
         '<ul><li><p>In placerat nisi pellentesque felis blandit, vel varius justo eleifend.</p></li><li><p>Etiam porttitor tortor vel lobortis ultricies.</p></li><li><p>Nam non libero accumsan, sagittis nibh vitae, auctor ligula.</p></li><li><p>Sed hendrerit dui a ante porttitor, vitae tristique ipsum laoreet.</p></li><li><p>Suspendisse interdum mauris a lectus dignissim, vitae aliquet ante tempor.</p></li></ul>',
     },
@@ -49,6 +52,7 @@ export const cvSettingTemplate: Cv = {
       from: new Date(2012, 1, 1),
       to: new Date(),
       current: true,
+      displayDate: true,
       summary:
         '<ul><li><p>Sed ut lorem viverra urna malesuada interdum in ut risus.</p></li><li><p>Duis at sem non justo aliquam iaculis.</p></li><li><p>Quisque lobortis nibh non turpis interdum ornare.</p></li><li><p>Sed et diam nec arcu tempor suscipit sit amet at tellus.</p></li><li><p>Duis quis diam imperdiet, pharetra lacus eget, fringilla odio.</p></li></ul>',
     },
@@ -61,6 +65,7 @@ export const cvSettingTemplate: Cv = {
       from: new Date(2009, 1, 1),
       to: new Date(2012, 1, 1),
       current: true,
+      displayDate: true,
       summary:
         '<ul><li><p>Sed ut lorem viverra urna malesuada interdum in ut risus.</p></li><li><p>Duis at sem non justo aliquam iaculis.</p></li><li><p>Quisque lobortis nibh non turpis interdum ornare.</p></li><li><p>Sed et diam nec arcu tempor suscipit sit amet at tellus.</p></li><li><p>Duis quis diam imperdiet, pharetra lacus eget, fringilla odio.</p></li></ul>',
     },
@@ -81,6 +86,7 @@ export const cvSettingsEmptyTemplate: Cv = {
   jobTitle: '',
   name: '',
   lastName: '',
+  birthDate: '',
   email: '',
   location: '',
   phoneNumber: '',

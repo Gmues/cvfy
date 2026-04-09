@@ -14,6 +14,7 @@ export interface Cv {
   jobTitle: string
   name: string
   lastName: string
+  birthDate: string
   email: string
   location: string
   phoneNumber: string

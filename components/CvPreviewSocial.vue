@@ -58,21 +58,6 @@ const { formSettings } = useCvState()
           :href="`https://github.com/${formSettings.github}`"
         >{{ formSettings.github }}</a>
       </div>
-      <div
-        v-if="formSettings.website"
-        class="cv__icon-wrapper"
-      >
-        <svg class="cv__icon">
-          <use href="@/assets/sprite.svg#website" />
-        </svg>
-        <a
-          target="_blank"
-          rel="noopener"
-          :href="formSettings.website.includes('https') ? formSettings.website : `https://${formSettings.website}`"
-        >{{
-          formSettings.website
-        }}</a>
-      </div>
     </div>
   </section>
 </template>
