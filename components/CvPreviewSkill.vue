@@ -59,7 +59,12 @@ function withPunctuation(index: number, length: number) {
       <li
         v-for="(skill, i) in skills"
         :key="`preview${skill}`"
-        :class="[{ 'flex justify-between': isLanguage && formSettings.layout === 'two-column' }, { inline: formSettings.layout === 'one-column' && isLanguage }, { cv__tag: withTags }]"
+        :class="[
+          { 'flex justify-between': isLanguage && formSettings.layout === 'two-column' },
+          { inline: formSettings.layout === 'one-column' && isLanguage },
+          { 'list-item': !withTags && !isLanguage },
+          { cv__tag: withTags }
+        ]"
       >
         <template v-if="isLanguage">
           <span
@@ -105,6 +110,16 @@ ul li:last-child.comma::after {
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  :deep(ul.cv__list) {
+    font-weight: 300;
+    list-style: initial;
+    padding-left: 1rem;
+
+    ::marker {
+      color: var(--primary);
+    }
   }
 }
 </style>

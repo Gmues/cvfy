@@ -22,7 +22,7 @@ const workSorted = computed(() => {
         v-for="job in workSorted"
         :key="job.id"
       >
-        <div class="grid grid-cols-3 gap-3">
+        <div class="grid gap-3" style="grid-template-columns: 1fr 1.5fr 1fr;">
           <h5 class="cv__section-title cv__section-title--sm">
             {{ job.title }}
           </h5>

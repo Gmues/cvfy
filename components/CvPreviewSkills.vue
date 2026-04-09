@@ -25,7 +25,7 @@ const { formSettings } = useCvState()
       :skill-name="$t('technical-skills')"
       :display="formSettings.displayJobSkills"
       :skills="formSettings.jobSkills"
-      :with-tags="true"
+      :with-tags="false"
     />
     <CvPreviewSkill
       :skill-name="$t('soft-skills')"

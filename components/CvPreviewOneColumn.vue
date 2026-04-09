@@ -9,7 +9,7 @@
         <CvPreviewTitle />
         <CvPreviewAbout />
       </div>
-      <div class="flex gap-2">
+      <div class="flex flex-col gap-1">
         <CvPreviewContact />
         <CvPreviewSocial />
       </div>
@@ -43,5 +43,7 @@
   margin-left: 10px;
   background-color: var(--primary);
   border-radius: 10px;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
 }
 </style>
