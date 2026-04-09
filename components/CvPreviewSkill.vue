@@ -37,22 +37,29 @@ function withPunctuation(index: number, length: number) {
   <section
     v-if="display"
     class="cv__section preview-skill"
-    :class="formSettings.layout === 'one-column' && 'inline-block w-full'"
+    :class="[
+      formSettings.layout === 'one-column' && !isLanguage && 'block w-full',
+      formSettings.layout === 'one-column' && isLanguage && 'inline-block w-full'
+    ]"
   >
     <h3
       class="capitalize"
-      :class="formSettings.layout === 'one-column' ? 'two-dots inline' : 'cv__section-title'"
+      :class="formSettings.layout === 'one-column' && isLanguage ? 'two-dots inline' : formSettings.layout === 'one-column' ? 'two-dots' : 'cv__section-title'"
     >
       {{ skillName }}
     </h3>
     <ul
       class="font-light"
-      :class="[{ inline: formSettings.layout === 'one-column' }, { cv__list: formSettings.layout !== 'one-column' && !withTags && !isLanguage }, { cv__tags: withTags }]"
+      :class="[
+        { inline: formSettings.layout === 'one-column' && isLanguage },
+        { 'cv__list': !withTags && !isLanguage },
+        { cv__tags: withTags }
+      ]"
     >
       <li
         v-for="(skill, i) in skills"
         :key="`preview${skill}`"
-        :class="[{ 'flex justify-between': isLanguage && formSettings.layout === 'two-column' }, { inline: formSettings.layout === 'one-column' }, { cv__tag: withTags }]"
+        :class="[{ 'flex justify-between': isLanguage && formSettings.layout === 'two-column' }, { inline: formSettings.layout === 'one-column' && isLanguage }, { cv__tag: withTags }]"
       >
         <template v-if="isLanguage">
           <span
@@ -67,7 +74,7 @@ function withPunctuation(index: number, length: number) {
           </span>
         </template>
         <template v-else>
-          {{ formatSkill(skill as string, i, skills.length) }}
+          {{ skill as string }}
         </template>
       </li>
     </ul>
