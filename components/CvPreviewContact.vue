@@ -39,6 +39,33 @@ const formattedBirthDate = computed(() => {
       :class="formSettings.layout === 'one-column' ? 'flex-wrap gap-2' : 'flex-col'"
     >
       <div
+        v-if="formSettings.birthDate"
+        class="cv__icon-wrapper"
+      >
+        <svg class="cv__icon">
+          <use href="@/assets/sprite.svg#calendar" />
+        </svg>
+        <span tabindex="0">{{ formattedBirthDate }}</span>
+      </div>
+      <div
+        v-if="formSettings.nationality"
+        class="cv__icon-wrapper"
+      >
+        <svg class="cv__icon">
+          <use href="@/assets/sprite.svg#earth" />
+        </svg>
+        <span tabindex="0">{{ formSettings.nationality }}</span>
+      </div>
+      <div
+        v-if="formSettings.location"
+        class="cv__icon-wrapper"
+      >
+        <svg class="cv__icon">
+          <use href="@/assets/sprite.svg#location" />
+        </svg>
+        <span tabindex="0">{{ formSettings.location }}</span>
+      </div>
+      <div
         v-if="formSettings.email"
         class="cv__icon-wrapper"
       >
@@ -63,24 +90,6 @@ const formattedBirthDate = computed(() => {
         >{{
           formSettings.phoneNumber
         }}</a>
-      </div>
-      <div
-        v-if="formSettings.location"
-        class="cv__icon-wrapper"
-      >
-        <svg class="cv__icon">
-          <use href="@/assets/sprite.svg#location" />
-        </svg>
-        <span tabindex="0">{{ formSettings.location }}</span>
-      </div>
-      <div
-        v-if="formSettings.birthDate"
-        class="cv__icon-wrapper"
-      >
-        <svg class="cv__icon">
-          <use href="@/assets/sprite.svg#calendar" />
-        </svg>
-        <span tabindex="0">{{ formattedBirthDate }}</span>
       </div>
       <div
         v-if="formSettings.website"

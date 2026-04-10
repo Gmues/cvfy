@@ -1,4 +1,5 @@
 export const LEVELS = [
+  'Native',
   'A1',
   'A2',
   'B1',
@@ -15,6 +16,7 @@ export interface Cv {
   name: string
   lastName: string
   birthDate: string
+  nationality?: string
   email: string
   location: string
   phoneNumber: string
